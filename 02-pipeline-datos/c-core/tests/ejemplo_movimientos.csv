@@ -1,0 +1,13 @@
+fecha,importe,tipo,categoria,descripcion
+2025-01-05,1200.00,ingreso,ventas_producto_a,Venta pedido #101
+2025-01-10,-350.00,gasto,suministros,Factura electricidad
+2025-01-15,800.00,ingreso,ventas_servicio_b,Servicio consultoria cliente X
+2025-01-20,-120.50,gasto,material_oficina,Compra material
+2025-02-03,1500.00,ingreso,ventas_producto_a,Venta pedido #102
+2025-02-08,-400.00,gasto,suministros,Factura electricidad
+2025-02-14,-200.00,gasto,marketing,Campaña redes sociales
+2025-02-25,950.00,ingreso,ventas_servicio_b,Servicio consultoria cliente Y
+2025-03-02,1100.00,ingreso,ventas_producto_a,Venta pedido #103
+2025-03-09,-380.00,gasto,suministros,Factura electricidad
+2025-03-18,-90.00,gasto,material_oficina,Compra material
+2025-03-27,1300.00,ingreso,ventas_servicio_b,Servicio consultoria cliente Z

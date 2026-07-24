@@ -1,0 +1,25 @@
+# === Datos sensibles (NUNCA subir) ===
+data/real/
+*.real.csv
+
+# === C ===
+c-core/**/*.o
+c-core/**/*.out
+c-core/bin/
+c-core/build/
+
+# === Java ===
+java-service/target/
+java-service/**/*.class
+*.jar
+
+# === SQL ===
+sql/*.db
+sql/*.sqlite3
+
+# === Web ===
+web/node_modules/
+
+# === Sistema ===
+.DS_Store
+*.log
