@@ -12,9 +12,22 @@ cambia, se actualiza este documento y se añade una entrada en
   estándar de facto en Linux/macOS).
 - **Paralelismo:**
   - `pthreads` (POSIX Threads) — ya disponible en el sistema, sin instalación.
-  - `OpenMP` — requiere compilar con `-fopenmp`; comprobar disponibilidad en
-    macOS (con Clang de Xcode no viene por defecto, puede requerir
-    `libomp` vía Homebrew: `brew install libomp`).
+  - `OpenMP` — Apple Clang no lo soporta de fábrica. Instalado vía Homebrew:
+    `brew install libomp` (en este equipo, Mac Intel/macOS 13, quedó en
+    `/usr/local/opt/libomp`, confirmado con `brew --prefix libomp`).
+
+    **Comando de compilación confirmado y funcional en esta máquina:**
+    ```bash
+    clang -Xpreprocessor -fopenmp \
+      -I/usr/local/opt/libomp/include \
+      -L/usr/local/opt/libomp/lib -lomp \
+      fichero.c -o fichero
+    ```
+    Verificado el 2026-07-24 con un programa de prueba (`omp_get_thread_num`),
+    detectando correctamente 4 hilos lógicos disponibles en esta CPU. Este
+    comando se integrará en el `Makefile` de `c-core/` cuando llegue la Fase 2
+    (target específico, por ejemplo `make openmp`, separado del build
+    secuencial/pthreads para poder comparar los tres).
 - **Build:** Makefile propio (sin CMake por ahora, para no añadir una capa de
   abstracción antes de necesitarla).
 - **Debugging/memoria:** `valgrind` si está disponible en el entorno, o
